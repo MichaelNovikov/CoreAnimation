@@ -16,6 +16,10 @@ namespace FigureGame
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BtnColor { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton BtnDown { get; set; }
 
         [Outlet]
@@ -44,11 +48,31 @@ namespace FigureGame
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BtnRotation { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BtnScaleDown { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BtnScaleUp { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BtnTransform { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton BtnUp { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView figure { get; set; }
+
+        [Action ("BtnColor_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BtnColor_TouchUpInside (UIKit.UIButton sender);
 
         [Action ("BtnDown_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -78,12 +102,33 @@ namespace FigureGame
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BtnRightUP_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("BtnRotation_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BtnRotation_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("BtnScaleDown_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BtnScaleDown_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("BtnScaleUp_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BtnScaleUp_TouchUpInside (UIKit.UIButton sender);
+
+        [Action ("BtnTransform_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BtnTransform_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("BtnUp_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BtnUp_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
+            if (BtnColor != null) {
+                BtnColor.Dispose ();
+                BtnColor = null;
+            }
+
             if (BtnDown != null) {
                 BtnDown.Dispose ();
                 BtnDown = null;
@@ -117,6 +162,26 @@ namespace FigureGame
             if (BtnRightUP != null) {
                 BtnRightUP.Dispose ();
                 BtnRightUP = null;
+            }
+
+            if (BtnRotation != null) {
+                BtnRotation.Dispose ();
+                BtnRotation = null;
+            }
+
+            if (BtnScaleDown != null) {
+                BtnScaleDown.Dispose ();
+                BtnScaleDown = null;
+            }
+
+            if (BtnScaleUp != null) {
+                BtnScaleUp.Dispose ();
+                BtnScaleUp = null;
+            }
+
+            if (BtnTransform != null) {
+                BtnTransform.Dispose ();
+                BtnTransform = null;
             }
 
             if (BtnUp != null) {
