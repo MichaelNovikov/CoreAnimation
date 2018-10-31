@@ -1,5 +1,4 @@
 ﻿using CoreGraphics;
-using Foundation;
 using System;
 using UIKit;
 
@@ -12,20 +11,22 @@ namespace FigureGame
         private bool transFlag = false;
         private bool colorFlag = false;
 
-        public ViewController (IntPtr handle) : base (handle)
+        CGAffineTransform _transform;
+
+        public ViewController(IntPtr handle) : base(handle)
         {
         }
 
-        public override void ViewDidLoad ()
+        public override void ViewDidLoad()
         {
-            base.ViewDidLoad ();
-
+            base.ViewDidLoad();
+            _transform = CGAffineTransform.MakeIdentity();
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
-        public override void DidReceiveMemoryWarning ()
+        public override void DidReceiveMemoryWarning()
         {
-            base.DidReceiveMemoryWarning ();
+            base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
         }
 
@@ -33,10 +34,10 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var frame = figure.Frame;
-                frame.X -= 10;
-                frame.Y -= 10;
-                figure.Frame = frame;
+                var сenter = figure.Center;
+                сenter.X -= 10;
+                сenter.Y -= 10;
+                figure.Center = сenter;
             });
         }
 
@@ -44,9 +45,9 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var frame = figure.Frame;
-                frame.Y -= 10;
-                figure.Frame = frame;
+                var сenter = figure.Center;
+                сenter.Y -= 10;
+                figure.Center = сenter;
             });
         }
 
@@ -54,10 +55,10 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var frame = figure.Frame;
-                frame.Y -= 10;
-                frame.X += 10;
-                figure.Frame = frame;
+                var сenter = figure.Center;
+                сenter.Y -= 10;
+                сenter.X += 10;
+                figure.Center = сenter;
             });
         }
 
@@ -65,9 +66,9 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var frame = figure.Frame;
-                frame.X -= 10;
-                figure.Frame = frame;
+                var сenter = figure.Center;
+                сenter.X -= 10;
+                figure.Center = сenter;
             });
         }
 
@@ -75,30 +76,30 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var frame = figure.Frame;
-                frame.X += 10;
-                figure.Frame = frame;
+                var сenter = figure.Center;
+                сenter.X += 10;
+                figure.Center = сenter;
             });
         }
 
         partial void BtnLeftDown_TouchUpInside(UIButton sender)
         {
-             UIView.Animate(0.2f, () =>
-            {
-                var frame = figure.Frame;
-                frame.Y += 10;
-                frame.X -= 10;
-                figure.Frame = frame;
-            }); ;
+            UIView.Animate(0.2f, () =>
+           {
+               var сenter = figure.Center;
+               сenter.Y += 10;
+               сenter.X -= 10;
+               figure.Center = сenter;
+           }); ;
         }
 
         partial void BtnDown_TouchUpInside(UIButton sender)
         {
             UIView.Animate(0.2f, () =>
             {
-                var frame = figure.Frame;
-                frame.Y += 10;
-                figure.Frame = frame;
+                var center = figure.Center;
+                center.Y += 10;
+                figure.Center = center;
             });
         }
 
@@ -106,10 +107,10 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var frame = figure.Frame;
-                frame.Y += 10;
-                frame.X += 10;
-                figure.Frame = frame;
+                var center = figure.Center;
+                center.Y += 10;
+                center.X += 10;
+                figure.Center = center;
             });
         }
 
@@ -118,10 +119,8 @@ namespace FigureGame
             _scale += .1f;
             UIView.Animate(0.2f, () =>
             {
-                var frame = figure.Frame;
-                frame.Width += _scale;
-                frame.Height += _scale;
-                figure.Frame = frame;
+                _transform.Scale(_scale, _scale);
+                figure.Transform = _transform;
             });
         }
 
@@ -130,12 +129,8 @@ namespace FigureGame
             _scale -= .1f;
             UIView.Animate(0.2f, () =>
             {
-                var frame = figure.Frame;
-                frame.Width -= _scale;
-                frame.Height -= _scale;
-                figure.Frame = frame;
-                //figure.Transform = CGAffineTransform.MakeScale(_scale, _scale);
-
+                _transform.Scale(_scale, _scale);
+                figure.Transform = _transform;
             });
         }
 
@@ -145,7 +140,6 @@ namespace FigureGame
             {
                 if (!transFlag)
                 {
-
                     figure.Layer.CornerRadius = figure.Frame.Width / 2;
                     transFlag = true;
                 }
@@ -176,12 +170,11 @@ namespace FigureGame
 
         partial void BtnRotation_TouchUpInside(UIButton sender)
         {
-            
-            _step += .5f;
+            _step += .3f;
             UIView.Animate(0.2f, () =>
             {
-                //figure.Transform = CGAffineTransform.MakeRotation(_step);
-                figure.Frame = 
+                _transform.Rotate(_step);
+                figure.Transform = _transform;
             });
         }
     }
