@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="243" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="20" y="46" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0.50196078431372548" blue="0" alpha="1"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="268" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="130" y="576" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="BntUp_TouchUpInside:" destination="270" id="269" eventType="touchUpInside"/>
+                                    <action selector="BtnLeftUP_TouchUpInside:" destination="BYZ-38-t0r" id="539" eventType="touchUpInside"/>
+                                </connections>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <state key="normal" title="LUp">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="271" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="184" y="576" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="BntUp_TouchUpInside:" destination="273" id="272" eventType="touchUpInside"/>
+                                    <action selector="BtnUp_TouchUpInside:" destination="BYZ-38-t0r" id="540" eventType="touchUpInside"/>
+                                </connections>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <state key="normal" title="Up">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="274" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="238" y="576" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="BntUp_TouchUpInside:" destination="276" id="275" eventType="touchUpInside"/>
+                                    <action selector="BtnRightUP_TouchUpInside:" destination="BYZ-38-t0r" id="541" eventType="touchUpInside"/>
+                                </connections>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <state key="normal" title="rUp">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="277" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="238" y="630" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="UIButton220_TouchUpInside:" destination="279" id="278" eventType="touchUpInside"/>
+                                    <action selector="BtnRight_TouchUpInside:" destination="273" id="280" eventType="touchUpInside"/>
+                                    <action selector="BtnRight_TouchUpInside:" destination="BYZ-38-t0r" id="543" eventType="touchUpInside"/>
+                                </connections>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <state key="normal" title="Right">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="281" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="238" y="684" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="BntUp_TouchUpInside:" destination="283" id="282" eventType="touchUpInside"/>
+                                    <action selector="BtnRightDown_TouchUpInside:" destination="BYZ-38-t0r" id="546" eventType="touchUpInside"/>
+                                </connections>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <state key="normal" title="rDow">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="284" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="184" y="684" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <state key="normal" title="Down">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="BtnDown_TouchUpInside:" destination="273" id="285" eventType="touchUpInside"/>
+                                    <action selector="BtnDown_TouchUpInside:" destination="BYZ-38-t0r" id="545" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="286" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="130" y="684" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="BntUp_TouchUpInside:" destination="288" id="287" eventType="touchUpInside"/>
+                                    <action selector="BtnLeftDown_TouchUpInside:" destination="BYZ-38-t0r" id="544" eventType="touchUpInside"/>
+                                </connections>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <state key="normal" title="LDow">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="289" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="130" y="630" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="UIButton220_TouchUpInside:" destination="291" id="290" eventType="touchUpInside"/>
+                                    <action selector="BtnLeft_TouchUpInside:" destination="273" id="292" eventType="touchUpInside"/>
+                                    <action selector="BtnLeft_TouchUpInside:" destination="BYZ-38-t0r" id="542" eventType="touchUpInside"/>
+                                </connections>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <state key="normal" title="Left">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                </state>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="figure" destination="243" id="name-outlet-243"/>
+                        <outlet property="BtnUp" destination="271" id="name-outlet-271"/>
+                        <outlet property="BtnLeftUP" destination="268" id="name-outlet-268"/>
+                        <outlet property="BtnRightUP" destination="274" id="name-outlet-274"/>
+                        <outlet property="BtnLeft" destination="289" id="name-outlet-289"/>
+                        <outlet property="BtnRight" destination="277" id="name-outlet-277"/>
+                        <outlet property="BtnLeftDown" destination="286" id="name-outlet-286"/>
+                        <outlet property="BtnDown" destination="284" id="name-outlet-284"/>
+                        <outlet property="BtnRightDown" destination="281" id="name-outlet-281"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+</document>
