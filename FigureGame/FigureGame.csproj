@@ -111,7 +111,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <BundleResource Include="Resources\Arrows-Down-RightRD-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -129,6 +129,27 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrows-Down-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrows-Down-Left-iconLD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrows-Up-iconUP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrows-Up-Left-iconLU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrows-Up-Right-iconRU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrows-Left-iconL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Arrows-Right-iconR.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

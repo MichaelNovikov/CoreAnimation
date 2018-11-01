@@ -30,8 +30,8 @@
                                     <action selector="BntUp_TouchUpInside:" destination="270" id="269" eventType="touchUpInside"/>
                                     <action selector="BtnLeftUP_TouchUpInside:" destination="BYZ-38-t0r" id="539" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <state key="normal" title="LUp">
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <state key="normal" title="LUp" image="Arrows-Up-Left-iconLU.png">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                             </button>
@@ -42,9 +42,9 @@
                                     <action selector="BntUp_TouchUpInside:" destination="273" id="272" eventType="touchUpInside"/>
                                     <action selector="BtnUp_TouchUpInside:" destination="BYZ-38-t0r" id="540" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <state key="normal" title="Up">
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                <state key="normal" title="Up" image="Arrows-Up-iconUP.png">
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="274" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -54,8 +54,8 @@
                                     <action selector="BntUp_TouchUpInside:" destination="276" id="275" eventType="touchUpInside"/>
                                     <action selector="BtnRightUP_TouchUpInside:" destination="BYZ-38-t0r" id="541" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <state key="normal" title="rUp">
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                <state key="normal" title="rUp" image="Arrows-Up-Right-iconRU.png">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                             </button>
@@ -67,8 +67,8 @@
                                     <action selector="BtnRight_TouchUpInside:" destination="273" id="280" eventType="touchUpInside"/>
                                     <action selector="BtnRight_TouchUpInside:" destination="BYZ-38-t0r" id="543" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <state key="normal" title="Right">
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                <state key="normal" title="Right" image="Arrows-Right-iconR.png">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                             </button>
@@ -79,17 +79,18 @@
                                     <action selector="BntUp_TouchUpInside:" destination="283" id="282" eventType="touchUpInside"/>
                                     <action selector="BtnRightDown_TouchUpInside:" destination="BYZ-38-t0r" id="546" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <state key="normal" title="rDow">
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                <state key="normal" title="rDow" image="Arrows-Down-RightRD-icon.png">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="284" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="184" y="684" width="46" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <state key="normal" title="Down">
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <state key="normal" title="Down" image="Arrows-Down-icon.png">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                    <color key="titleShadowColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                                 <connections>
                                     <action selector="BtnDown_TouchUpInside:" destination="273" id="285" eventType="touchUpInside"/>
@@ -103,8 +104,8 @@
                                     <action selector="BntUp_TouchUpInside:" destination="288" id="287" eventType="touchUpInside"/>
                                     <action selector="BtnLeftDown_TouchUpInside:" destination="BYZ-38-t0r" id="544" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <state key="normal" title="LDow">
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                <state key="normal" title="LDow" image="Arrows-Down-Left-iconLD.png">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                             </button>
@@ -116,8 +117,8 @@
                                     <action selector="BtnLeft_TouchUpInside:" destination="273" id="292" eventType="touchUpInside"/>
                                     <action selector="BtnLeft_TouchUpInside:" destination="BYZ-38-t0r" id="542" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <state key="normal" title="Left">
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                <state key="normal" title="Left" image="Arrows-Left-iconL.png">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                             </button>
@@ -191,4 +192,14 @@
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Arrows-Down-icon.png" width="64" height="64"/>
+        <image name="Arrows-Down-Left-iconLD.png" width="64" height="64"/>
+        <image name="Arrows-Down-RightRD-icon.png" width="64" height="64"/>
+        <image name="Arrows-Up-iconUP.png" width="64" height="64"/>
+        <image name="Arrows-Up-Left-iconLU.png" width="64" height="64"/>
+        <image name="Arrows-Up-Right-iconRU.png" width="64" height="64"/>
+        <image name="Arrows-Left-iconL.png" width="64" height="64"/>
+        <image name="Arrows-Right-iconR.png" width="64" height="64"/>
+    </resources>
 </document>
