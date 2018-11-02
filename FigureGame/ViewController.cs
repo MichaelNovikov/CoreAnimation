@@ -9,6 +9,8 @@ namespace FigureGame
         private nfloat _step = 0f;
         private nfloat _scale = 1f;
         private bool transFlag = false;
+        private bool slid = false;
+        private bool slidColor = false;
         private UIView _figure;
 
         CGAffineTransform _transform;
@@ -140,11 +142,11 @@ namespace FigureGame
 
             featureView.AddSubviews(lineUPIn, lineDownIn, viewIn);
 
-
             var recon = new UIPanGestureRecognizer(r =>
             {
                 nfloat range = featureView.Frame.Width / 2;
                 var L = r.LocationInView(r.View);
+
 
                 switch (r.State)
                 {
@@ -152,33 +154,39 @@ namespace FigureGame
                         break;
 
                     case UIGestureRecognizerState.Began:
+                        if (((L.Y + range) <= featureView.Bounds.GetMaxY()) && ((L.Y - range) >= featureView.Bounds.GetMinY()))
+                        {
+                            viewIn.Layer.RemoveAllAnimations();
+                            slid = true;
+                        }
                         break;
 
                     case UIGestureRecognizerState.Changed:
-                        if (((L.Y + range) <= featureView.Bounds.GetMaxY()) && ((L.Y - range) >= featureView.Bounds.GetMinY()))
+                        if ((((L.Y + range) <= featureView.Bounds.GetMaxY()) && ((L.Y - range) >= featureView.Bounds.GetMinY())) && slid)
                         {
                             var center = viewIn.Center;
                             center.Y = L.Y;
                             viewIn.Center = center;
                         }
-                        UIView.Animate(0.2f, () =>
+                        UIView.Animate(.2f, () =>
                         {
-                            if (viewIn.Center.Y < featureView.Bounds.GetMidY())
+                            if ((viewIn.Center.Y < featureView.Bounds.GetMidY()) && !slidColor)
                             {
                                 viewIn.BackgroundColor = UIColor.Black;
                                 _figure.BackgroundColor = UIColor.Black;
+                                slidColor = true;
                             }
-                            else
+                            else if ((viewIn.Center.Y > featureView.Bounds.GetMidY()) && slidColor)
                             {
                                 viewIn.BackgroundColor = UIColor.Green;
                                 _figure.BackgroundColor = UIColor.Green;
+                                slidColor = false;
                             }
                         });
-
                         break;
 
                     case UIGestureRecognizerState.Ended:
-                        UIView.Animate(0.2f, () =>
+                        UIView.Animate(.2f, () =>
                         {
                             if (viewIn.Center.Y < featureView.Bounds.GetMidY())
                             {
@@ -197,6 +205,7 @@ namespace FigureGame
                                 _figure.BackgroundColor = UIColor.Green;
                             }
                         });
+                        slid = false;
                         break;
 
                     case UIGestureRecognizerState.Cancelled:
@@ -317,6 +326,7 @@ namespace FigureGame
             {
                 _transform.Scale(_scale, _scale);
                 _figure.Transform = _transform;
+
             });
         }
 
