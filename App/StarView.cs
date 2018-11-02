@@ -9,6 +9,8 @@ namespace App
 {
     public class StarView : UIView
     {
+        UIView rectIn;
+
         public StarView()
         {
             Initialize();
@@ -22,18 +24,11 @@ namespace App
         void Initialize()
         {
 
-            var rectIn = new UIView()
+            rectIn = new UIView()
             {
                 Frame = new CGRect(0, 1, 40, 40),
                 BackgroundColor = UIColor.Black
             };
-
-            var rect = new UIView()
-            {
-                Frame = new CGRect(0, 50, 40, 200),
-                BackgroundColor = UIColor.Cyan
-            };
-            rect.AddSubview(rectIn);
 
 
             var recon = new UIPanGestureRecognizer(r =>
@@ -49,7 +44,7 @@ namespace App
                         break;
 
                     case UIGestureRecognizerState.Changed:
-                        if (((L.Y + 20) <= rect.Bounds.GetMaxY()) && ((L.Y - 20) >= rect.Bounds.GetMinY()))
+                        if (((L.Y + 20) <= this.Bounds.GetMaxY()) && ((L.Y - 20) >= this.Bounds.GetMinY()))
                         {
                             var center = rectIn.Center;
                             center.Y = L.Y;
@@ -60,16 +55,16 @@ namespace App
                     case UIGestureRecognizerState.Ended:
                         UIView.Animate(0.2f, () =>
                         {
-                            if (rectIn.Center.Y < rect.Bounds.GetMidY())
+                            if (rectIn.Center.Y < this.Bounds.GetMidY())
                             {
                                 var center = rectIn.Center;
-                                center.Y = rect.Bounds.GetMinY() + 20;
+                                center.Y = this.Bounds.GetMinY() + 20;
                                 rectIn.Center = center;
                             }
                             else
                             {
                                 var center = rectIn.Center;
-                                center.Y = rect.Bounds.GetMaxY() - 20;
+                                center.Y = this.Bounds.GetMaxY() - 20;
                                 rectIn.Center = center;
                             }
                         });
@@ -85,7 +80,7 @@ namespace App
             });
 
             AddGestureRecognizer(recon);
-            AddSubviews(rect);
+            AddSubviews(rectIn);
         }
     }
 }
