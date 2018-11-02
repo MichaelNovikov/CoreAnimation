@@ -136,7 +136,7 @@ namespace FigureGame
             };
             viewIn.Layer.CornerRadius = viewIn.Frame.Width / 2;
             viewIn.Layer.BorderWidth = 5f;
-            viewIn.Layer.BorderColor = UIColor.Red.CGColor; /*UIColor.FromRGBA(10, 96, 255, 255).CGColor;*/
+            viewIn.Layer.BorderColor = UIColor.FromRGBA(10, 96, 255, 255).CGColor;
 
             featureView.AddSubviews(lineUPIn, lineDownIn, viewIn);
 
