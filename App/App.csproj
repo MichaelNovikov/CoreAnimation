@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{E4464F3B-2C04-457D-9930-5B7504F35BB3}</ProjectGuid>
+    <ProjectGuid>{101E3060-8799-4119-8A7A-4F86A01C0C84}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{edc1b0fa-90cd-4038-8fad-98fe74adb368}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FigureGame</RootNamespace>
-    <AssemblyName>FigureGame</AssemblyName>
+    <RootNamespace>App</RootNamespace>
+    <AssemblyName>App</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
   </PropertyGroup>
@@ -111,7 +111,7 @@
     </ImageAsset>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Arrows-Down-RightRD-icon.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -122,37 +122,13 @@
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DrawerView.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="StarView.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Arrows-Down-icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Arrows-Down-Left-iconLD.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Arrows-Up-iconUP.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Arrows-Up-Left-iconLU.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Arrows-Up-Right-iconRU.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Arrows-Left-iconL.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Arrows-Right-iconR.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\vertical-line-clipart-2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -18,11 +18,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="243" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="23" y="44" width="40" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0.50196078431372548" blue="0" alpha="1"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="268" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="130" y="576" width="46" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -31,6 +26,7 @@
                                     <action selector="BtnLeftUP_TouchUpInside:" destination="BYZ-38-t0r" id="539" eventType="touchUpInside"/>
                                 </connections>
                                 <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
                                 <state key="normal" title="LUp" image="Arrows-Up-Left-iconLU.png">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
@@ -123,55 +119,56 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="785" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="354" y="576" width="52" height="30"/>
+                                <rect key="frame" x="324" y="576" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <state key="normal" title="Scale+"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                <state key="normal" title="Scale+">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
+                                </state>
                                 <connections>
                                     <action selector="BtnScaleUp_TouchUpInside:" destination="BYZ-38-t0r" id="787" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="786" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="354" y="614" width="52" height="30"/>
+                                <rect key="frame" x="324" y="614" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                 <state key="normal" title="Scale-"/>
                                 <connections>
                                     <action selector="BtnScaleDown_TouchUpInside:" destination="BYZ-38-t0r" id="788" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1271" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="6" y="584" width="74" height="30"/>
+                                <rect key="frame" x="294" y="692" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                 <state key="normal" title="Transform"/>
                                 <connections>
                                     <action selector="BtnTransform_TouchUpInside:" destination="BYZ-38-t0r" id="1272" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3460" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="357" y="660" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
-                                <color key="tintColor" colorSpace="calibratedRGB" red="0.0392156862745098" green="0.37647058823529411" blue="1" alpha="1"/>
-                                <state key="normal" title="Color"/>
-                                <connections>
-                                    <action selector="BtnColor_TouchUpInside:" destination="BYZ-38-t0r" id="3461" eventType="touchUpInside"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4197" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="6" y="638" width="74" height="30"/>
+                                <rect key="frame" x="294" y="654" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="0.6470588235294118" blue="0" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                 <state key="normal" title="Rotation"/>
                                 <connections>
                                     <action selector="BtnRotation_TouchUpInside:" destination="BYZ-38-t0r" id="4198" eventType="touchUpInside"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="4447" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="55" y="588" width="27" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="10062" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="20" width="414" height="548"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.70196078431372544" green="0.996078431372549" blue="0.996078431372549" alpha="1"/>
+                            </view>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="figure" destination="243" id="name-outlet-243"/>
                         <outlet property="BtnUp" destination="271" id="name-outlet-271"/>
                         <outlet property="BtnLeftUP" destination="268" id="name-outlet-268"/>
                         <outlet property="BtnRightUP" destination="274" id="name-outlet-274"/>
@@ -183,8 +180,8 @@
                         <outlet property="BtnScaleUp" destination="785" id="name-outlet-785"/>
                         <outlet property="BtnScaleDown" destination="786" id="name-outlet-786"/>
                         <outlet property="BtnTransform" destination="1271" id="name-outlet-1271"/>
-                        <outlet property="BtnColor" destination="3460" id="name-outlet-3460"/>
                         <outlet property="BtnRotation" destination="4197" id="name-outlet-4197"/>
+                        <outlet property="addView" destination="4447" id="name-outlet-4447"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

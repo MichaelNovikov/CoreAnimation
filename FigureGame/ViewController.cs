@@ -6,10 +6,10 @@ namespace FigureGame
 {
     public partial class ViewController : UIViewController
     {
-        private float _step = 0f;
-        private float _scale = 1f;
+        private nfloat _step = 0f;
+        private nfloat _scale = 1f;
         private bool transFlag = false;
-        private bool colorFlag = false;
+        private UIView _figure;
 
         CGAffineTransform _transform;
 
@@ -21,6 +21,14 @@ namespace FigureGame
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            _figure = new UIView()
+            {
+                Frame = new CGRect(30, 30, 50, 50),
+                BackgroundColor = UIColor.Black
+            };
+            _figure.Layer.BorderWidth = 5f;
+            _figure.Layer.BorderColor = UIColor.Red.CGColor;
 
             #region Black
 
@@ -96,14 +104,119 @@ namespace FigureGame
 
             var rect9 = new UIView()
             {
-                Frame = new CGRect(373, 497, 30, 30),
+                Frame = new CGRect(373, 490, 30, 30),
                 BackgroundColor = UIColor.Green
             };
 
             #endregion
+            ;
+            #region AddTask
+
+            var featureView = new UIView()
+            {
+                Frame = new CGRect(0, 0, addView.Frame.Width, addView.Frame.Height),
+            };
+
+            var lineUPIn = new UIView()
+            {
+                Frame = new CGRect((featureView.Frame.Width / 2) - 3, 0, 6, featureView.Frame.GetMidY()),
+                BackgroundColor = UIColor.Black
+            };
+
+            var lineDownIn = new UIView()
+            {
+                Frame = new CGRect((featureView.Frame.Width / 2) - 3, featureView.Frame.GetMidY(), 6, featureView.Frame.GetMidY()),
+                BackgroundColor = UIColor.Green
+            };
+
+            var viewIn = new UIView()
+            {
+                Frame = new CGRect(0, 0, featureView.Frame.Width, featureView.Frame.Width),
+                BackgroundColor = UIColor.Black
+            };
+            viewIn.Layer.CornerRadius = viewIn.Frame.Width / 2;
+            viewIn.Layer.BorderWidth = 5f;
+            viewIn.Layer.BorderColor = UIColor.Red.CGColor; /*UIColor.FromRGBA(10, 96, 255, 255).CGColor;*/
+
+            featureView.AddSubviews(lineUPIn, lineDownIn, viewIn);
+
+
+            var recon = new UIPanGestureRecognizer(r =>
+            {
+                nfloat range = featureView.Frame.Width / 2;
+                var L = r.LocationInView(r.View);
+
+                switch (r.State)
+                {
+                    case UIGestureRecognizerState.Possible:
+                        break;
+
+                    case UIGestureRecognizerState.Began:
+                        break;
+
+                    case UIGestureRecognizerState.Changed:
+                        if (((L.Y + range) <= featureView.Bounds.GetMaxY()) && ((L.Y - range) >= featureView.Bounds.GetMinY()))
+                        {
+                            var center = viewIn.Center;
+                            center.Y = L.Y;
+                            viewIn.Center = center;
+                        }
+                        UIView.Animate(0.2f, () =>
+                        {
+                            if (viewIn.Center.Y < featureView.Bounds.GetMidY())
+                            {
+                                viewIn.BackgroundColor = UIColor.Black;
+                                _figure.BackgroundColor = UIColor.Black;
+                            }
+                            else
+                            {
+                                viewIn.BackgroundColor = UIColor.Green;
+                                _figure.BackgroundColor = UIColor.Green;
+                            }
+                        });
+
+                        break;
+
+                    case UIGestureRecognizerState.Ended:
+                        UIView.Animate(0.2f, () =>
+                        {
+                            if (viewIn.Center.Y < featureView.Bounds.GetMidY())
+                            {
+                                var center = viewIn.Center;
+                                center.Y = featureView.Bounds.GetMinY() + range - 1;
+                                viewIn.Center = center;
+                                viewIn.BackgroundColor = UIColor.Black;
+                                _figure.BackgroundColor = UIColor.Black;
+                            }
+                            else
+                            {
+                                var center = viewIn.Center;
+                                center.Y = featureView.Bounds.GetMaxY() - range + 1;
+                                viewIn.Center = center;
+                                viewIn.BackgroundColor = UIColor.Green;
+                                _figure.BackgroundColor = UIColor.Green;
+                            }
+                        });
+                        break;
+
+                    case UIGestureRecognizerState.Cancelled:
+
+                        break;
+
+                    case UIGestureRecognizerState.Failed:
+                        break;
+                }
+            });
+
+            featureView.AddGestureRecognizer(recon);
+
+            #endregion
+
+            addView.AddSubview(featureView);
 
             View.AddSubviews(rect1, rect2, rect3, rect4, rect5, viewLine, rect6,
-                _drawTriangle, _drawEllipese1, rect7, rect8, _drawEllipese2, rect9);
+                _drawTriangle, _drawEllipese1, rect7, rect8, _drawEllipese2, rect9, _figure);
+
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -117,10 +230,10 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var сenter = figure.Center;
+                var сenter = _figure.Center;
                 сenter.X -= 10;
                 сenter.Y -= 10;
-                figure.Center = сenter;
+                _figure.Center = сenter;
             });
         }
 
@@ -128,9 +241,9 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var сenter = figure.Center;
+                var сenter = _figure.Center;
                 сenter.Y -= 10;
-                figure.Center = сenter;
+                _figure.Center = сenter;
             });
         }
 
@@ -138,10 +251,10 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var сenter = figure.Center;
+                var сenter = _figure.Center;
                 сenter.Y -= 10;
                 сenter.X += 10;
-                figure.Center = сenter;
+                _figure.Center = сenter;
             });
         }
 
@@ -149,9 +262,9 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var сenter = figure.Center;
+                var сenter = _figure.Center;
                 сenter.X -= 10;
-                figure.Center = сenter;
+                _figure.Center = сenter;
             });
         }
 
@@ -159,9 +272,9 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var сenter = figure.Center;
+                var сenter = _figure.Center;
                 сenter.X += 10;
-                figure.Center = сenter;
+                _figure.Center = сenter;
             });
         }
 
@@ -169,10 +282,10 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
            {
-               var сenter = figure.Center;
+               var сenter = _figure.Center;
                сenter.Y += 10;
                сenter.X -= 10;
-               figure.Center = сenter;
+               _figure.Center = сenter;
            }); ;
         }
 
@@ -180,9 +293,9 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var center = figure.Center;
+                var center = _figure.Center;
                 center.Y += 10;
-                figure.Center = center;
+                _figure.Center = center;
             });
         }
 
@@ -190,10 +303,10 @@ namespace FigureGame
         {
             UIView.Animate(0.2f, () =>
             {
-                var center = figure.Center;
+                var center = _figure.Center;
                 center.Y += 10;
                 center.X += 10;
-                figure.Center = center;
+                _figure.Center = center;
             });
         }
 
@@ -203,7 +316,7 @@ namespace FigureGame
             UIView.Animate(0.2f, () =>
             {
                 _transform.Scale(_scale, _scale);
-                figure.Transform = _transform;
+                _figure.Transform = _transform;
             });
         }
 
@@ -213,7 +326,7 @@ namespace FigureGame
             UIView.Animate(0.2f, () =>
             {
                 _transform.Scale(_scale, _scale);
-                figure.Transform = _transform;
+                _figure.Transform = _transform;
             });
         }
 
@@ -223,30 +336,13 @@ namespace FigureGame
             {
                 if (!transFlag)
                 {
-                    figure.Layer.CornerRadius = figure.Layer.Frame.Width / 2;
+                    _figure.Layer.CornerRadius = _figure.Layer.Frame.Width / 2;
                     transFlag = true;
                 }
                 else
                 {
-                    figure.Layer.CornerRadius = 0;
+                    _figure.Layer.CornerRadius = 0;
                     transFlag = false;
-                }
-            });
-        }
-
-        partial void BtnColor_TouchUpInside(UIButton sender)
-        {
-            UIView.Animate(0.2f, () =>
-            {
-                if (!colorFlag)
-                {
-                    figure.Layer.BackgroundColor = UIColor.Black.CGColor;
-                    colorFlag = true;
-                }
-                else
-                {
-                    figure.Layer.BackgroundColor = UIColor.Green.CGColor;
-                    colorFlag = false;
                 }
             });
         }
@@ -257,7 +353,7 @@ namespace FigureGame
             UIView.Animate(0.2f, () =>
             {
                 _transform.Rotate(_step);
-                figure.Transform = _transform;
+                _figure.Transform = _transform;
             });
         }
     }

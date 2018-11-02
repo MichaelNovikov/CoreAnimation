@@ -13,7 +13,7 @@ namespace FigureGame
         public DrawerView(CGRect rect, string figure)
         {
             Frame = rect;
-            BackgroundColor = UIColor.White;
+            BackgroundColor = UIColor.Clear;
             _figure = figure;
         }
 

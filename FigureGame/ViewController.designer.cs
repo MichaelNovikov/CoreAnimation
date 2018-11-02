@@ -16,7 +16,7 @@ namespace FigureGame
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton BtnColor { get; set; }
+        UIKit.UIView addView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -65,14 +65,6 @@ namespace FigureGame
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton BtnUp { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView figure { get; set; }
-
-        [Action ("BtnColor_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void BtnColor_TouchUpInside (UIKit.UIButton sender);
 
         [Action ("BtnDown_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -124,9 +116,9 @@ namespace FigureGame
 
         void ReleaseDesignerOutlets ()
         {
-            if (BtnColor != null) {
-                BtnColor.Dispose ();
-                BtnColor = null;
+            if (addView != null) {
+                addView.Dispose ();
+                addView = null;
             }
 
             if (BtnDown != null) {
@@ -187,11 +179,6 @@ namespace FigureGame
             if (BtnUp != null) {
                 BtnUp.Dispose ();
                 BtnUp = null;
-            }
-
-            if (figure != null) {
-                figure.Dispose ();
-                figure = null;
             }
         }
     }
