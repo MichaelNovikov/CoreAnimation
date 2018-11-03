@@ -4,14 +4,18 @@ using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
 using Android.Animation;
+using Android.Graphics;
 using System;
 using Android;
+using Android.Views.Animations;
 
 namespace DroidAnimator
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        AnimatorSet _animation;
+        ObjectAnimator _rotationAnim;
         TextView textView;
         Button btnOne;
         Button btnTwo;
@@ -33,41 +37,48 @@ namespace DroidAnimator
             btnOne.Click += BtnOne_Click;
             btnTwo.Click += BtnTwo_Click;
             btnThree.Click += BtnThree_Click;
-
-            ObjectAnimator.OfFloat(textView, "Alpha", 0, 1).Start();
-  
+            btnFour.Click += BtnFour_Click;
         }
 
-        private void BtnOne_Click(object sender, EventArgs eventArgs )
+        private void BtnOne_Click(object sender, EventArgs eventArgs)
         {
-            ObjectAnimator.OfFloat(textView, "Alpha", 0, 1).Start();
+            _rotationAnim = ObjectAnimator.OfFloat(textView, "Rotation", 0, 360);
+            _rotationAnim.SetDuration(1500).Start();
         }
 
         private void BtnTwo_Click(object sender, EventArgs eventArgs)
         {
-            ObjectAnimator.OfFloat(textView, "Angle", 0, 180).Start();
+            var animation = new TranslateAnimation(0, 100, 0, 100);
+            animation.Duration = 1000;
+            animation.FillAfter = false;
+            animation.RepeatCount = 3;
+            animation.RepeatMode = RepeatMode.Reverse;
+
+            textView.StartAnimation(animation);
         }
 
         private void BtnThree_Click(object sender, EventArgs eventArgs)
         {
-            ObjectAnimator _ObjAnimation1 = ObjectAnimator.OfFloat(textView, "scaleX", .94f);
-            _ObjAnimation1.SetDuration(1250);
-            _ObjAnimation1.RepeatCount = 5; /*ValueAnimator.Infinite;*/
-            _ObjAnimation1.RepeatMode = ValueAnimatorRepeatMode.Reverse;
+            ObjectAnimator ObjAnimation1 = ObjectAnimator.OfFloat(textView, "ScaleX", 2f);
+            ObjAnimation1.SetDuration(1250);
+            ObjAnimation1.RepeatCount = 3; /*ValueAnimator.Infinite;*/
+            ObjAnimation1.RepeatMode = ValueAnimatorRepeatMode.Reverse;
 
-            ObjectAnimator _ObjAnimation2 = ObjectAnimator.OfFloat(textView, "scaleY", .94f);
-            _ObjAnimation2.SetDuration(1250);
-            _ObjAnimation2.RepeatCount = 5;  /*ValueAnimator.Infinite;*/
-            _ObjAnimation2.RepeatMode = ValueAnimatorRepeatMode.Reverse;
+            ObjectAnimator ObjAnimation2 = ObjectAnimator.OfFloat(textView, "scaleY", 2f);
+            ObjAnimation2.SetDuration(1250);
+            ObjAnimation2.RepeatCount = 3;  /*ValueAnimator.Infinite;*/
+            ObjAnimation2.RepeatMode = ValueAnimatorRepeatMode.Reverse;
 
-            AnimatorSet _Animation = new AnimatorSet();
-            _Animation.PlayTogether(_ObjAnimation1, _ObjAnimation2);
-            _Animation.Start();
+            _animation = new AnimatorSet();
+            _animation.PlayTogether(ObjAnimation1, ObjAnimation2);
+            _animation.Start();
         }
 
         private void BtnFour_Click(object sender, EventArgs eventArgs)
         {
-            ObjectAnimator.OfFloat(textView, "Alpha", 0, 1).Start();
+            textView.ClearAnimation();
+            _animation?.Cancel();
+            _rotationAnim?.Cancel();
         }
     }
 }

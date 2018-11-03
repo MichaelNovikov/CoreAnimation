@@ -156,7 +156,7 @@ namespace FigureGame
                     case UIGestureRecognizerState.Began:
                         if (((L.Y + range) <= featureView.Bounds.GetMaxY()) && ((L.Y - range) >= featureView.Bounds.GetMinY()))
                         {
-                            viewIn.Layer.RemoveAllAnimations();
+                         // viewIn.Layer.RemoveAllAnimations();
                             slid = true;
                         }
                         break;
